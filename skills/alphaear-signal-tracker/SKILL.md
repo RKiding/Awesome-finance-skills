@@ -13,7 +13,18 @@ This skill provides logic to track and update investment signals. It assesses ho
 
 ### 1. Track Signal Evolution
 
-Use `scripts/fin_agent.py` logic (referencing the `track_signal` method pattern) to update signals.
+### 1. Track Signal Evolution (Agentic Workflow)
+
+**YOU (the Agent)** are the Tracker. Use the prompts in `references/PROMPTS.md`.
+
+**Workflow:**
+1.  **Research**: Use **FinResearcher Prompt** to gather facts/price for a signal.
+2.  **Analyze**: Use **FinAnalyst Prompt** to generate the initial `InvestmentSignal`.
+3.  **Track**: For existing signals, use **Signal Tracking Prompt** to assess evolution (Strengthened/Weakened/Falsified) based on new info.
+
+**Tools:**
+- Use `alphaear-search` and `alphaear-stock` skills to gather the necessary data.
+- Use `scripts/fin_agent.py` helper `_sanitize_signal_output` if needing to clean JSON.
 
 **Key Logic:**
 

@@ -11,35 +11,22 @@ This skill provides a structured workflow for generating professional financial 
 
 ## Capabilities
 
-### 1. Generate Structured Reports
+## Capabilities
 
-Use `scripts/report_agent.py` logic (referencing `build_structured_report` method logic) to create reports.
+### 1. Generate Structured Reports (Agentic Workflow)
 
-**Key Components:**
+**YOU (the Agent)** are the Report Generator. Use the prompts in `references/PROMPTS.md` to progressively build the report.
 
--   **Plan**: Outline report structure based on input signals/data.
--   **Write**: Generate content for each section.
--   **Edit**: Refine content for clarity and tone.
--   **Charts**: Generate ECharts configurations via `AlphaEarVisualizer` (in `scripts/visualizer.py`).
+**Workflow:**
+1.  **Cluster Signals**: Read input signals and use the **Cluster Signals Prompt** to group them.
+2.  **Write Sections**: For each cluster, use the **Write Section Prompt** to generate analysis.
+3.  **Assemble**: Use the **Final Assembly Prompt** to compile the report.
 
-**Example Usage (Visualizer):**
+### 2. Visualization Tools
 
-```python
-from scripts.visualizer import AlphaEarVisualizer
-
-# Generate Chart Config
-viz = AlphaEarVisualizer()
-chart_config = viz.generate_chart_config(
-    chart_type="line",
-    title="Stock Price Trend",
-    data={"x": ["2023-01", "2023-02"], "y": [100, 120]}
-)
-print(chart_config)
-```
+Use `scripts/visualizer.py` to generate chart configurations if needed manually, though the Writer Prompt usually handles this via `json-chart` blocks.
 
 ## Dependencies
 
--   `agno` (Agent framework)
 -   `sqlite3` (built-in)
 
-Ensure `DatabaseManager` is initialized correctly.

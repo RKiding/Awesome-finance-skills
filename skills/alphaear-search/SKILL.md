@@ -7,61 +7,29 @@ description: Perform finance web searches and local context searches. Use when t
 
 ## Overview
 
-This skill provides unified search capabilities: web search (via DuckDuckGo, Jina, or Baidu) and local hybrid search (BM25 + Vector) for RAG applications.
+Unified search capabilities: web search (Jina/DDG/Baidu) and local RAG search.
 
 ## Capabilities
 
 ### 1. Web Search
 
-Use `scripts/search_tools.py` to perform web searches.
+Use `scripts/search_tools.py` via `SearchTools`.
 
-**Key Methods:**
+-   **Search**: `search(query, engine, max_results)`
+    -   Engines: `jina`, `ddg`, `baidu`, `local`.
+    -   Returns: JSON string (summary) or List[Dict] (via `search_list`).
+-   **Smart Cache (Agentic)**: If you want to avoid redundant searches, use the **Search Cache Relevance Prompt** in `references/PROMPTS.md`. Read the cache first and decide if it's usable.
+-   **Aggregate**: `aggregate_search(query)`
+    -   Combines results from multiple engines.
 
--   `search(query, engine, max_results)`: Execute a search.
-    -   **Engines**: `jina`, `ddg`, `baidu`.
-    -   **Returns**: Dictionary with `results` (JSON string) and metadata.
--   `aggregate_search(query)`: Search across multiple engines and aggregate results.
 
-**Example Usage (Python):**
+### 2. Local RAG
 
-```python
-from scripts.database_manager import DatabaseManager
-from scripts.search_tools import SearchTools
+Use `scripts/hybrid_search.py` or `SearchTools` with `engine='local'`.
 
-db = DatabaseManager()
-tools = SearchTools(db)
-
-# Simple Search
-results = tools.search("NVIDIA Earnings", engine="ddg")
-print(results)
-```
-
-### 2. Local Hybrid Search (RAG)
-
-Use `scripts/hybrid_search.py` for in-memory document retrieval.
-
-**Key Features:**
--   Add documents.
--   Search with weighted keyword matching (simple algorithm).
-
-**Example Usage (Python):**
-
-```python
-from scripts.hybrid_search import InMemoryRAG
-
-rag = InMemoryRAG()
-rag.add({"id": "doc1", "content": "Apple released Vision Pro.", "title": "Tech News"})
-rag.add({"id": "doc2", "content": "Tesla cybertruck delivery.", "title": "Auto News"})
-
-# Search
-hits = rag.search("Vision Pro")
-print(hits)
-```
+-   **Search**: Searches local `daily_news` database.
 
 ## Dependencies
 
--   `duckduckgo-search`
--   `requests`
--   `sqlite3` (built-in)
-
-Ensure `DatabaseManager` is initialized correctly.
+-   `duckduckgo-search`, `requests`
+-   `scripts/database_manager.py` (search cache & local news)

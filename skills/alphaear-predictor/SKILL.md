@@ -13,12 +13,14 @@ This skill utilizes the Kronos model (via `KronosPredictorUtility`) to perform t
 
 ### 1. Forecast Market Trends
 
-Use `scripts/kronos_predictor.py` to generate forecasts.
+### 1. Forecast Market Trends
 
-**Key Methods:**
+**Workflow:**
+1.  **Generate Base Forecast**: Use `scripts/kronos_predictor.py` (via `KronosPredictorUtility`) to generate the technical/quantitative forecast.
+2.  **Adjust Forecast (Agentic)**: Use the **Forecast Adjustment Prompt** in `references/PROMPTS.md` to subjectively adjust the numbers based on latest news/logic.
 
--   `predict(ticker, horizon)`: Generate price forecast.
--   `adjust_forecast(original_forecast, news_sentiment)`: Adjust forecast based on recent news sentiment.
+**Key Tools:**
+-   `KronosPredictorUtility.get_base_forecast(df, lookback, pred_len, news_text)`: Returns `List[KLinePoint]`.
 
 **Example Usage (Python):**
 

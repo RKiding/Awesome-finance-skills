@@ -13,26 +13,18 @@ This skill specializes in creating visual representations of logic flows, specif
 
 ### 1. Generate Draw.io Diagrams
 
-Use `scripts/visualizer.py` to generate XML for diagrams.
+### 1. Generate Draw.io Diagrams (Agentic Workflow)
 
-**Key Components:**
+**YOU (the Agent)** are the Visualizer. Use the prompts in `references/PROMPTS.md` to generate the XML.
 
--   `generate_logic_diagram(nodes, edges)`: Create a diagram structure.
--   **Output**: XML string compatible with Draw.io.
+**Workflow:**
+1.  **Generate XML**: Use the **Draw.io XML Generation Prompt** from `references/PROMPTS.md` to convert your logical chain into XML.
+2.  **Save/Render**: Use `scripts/visualizer.py` method `render_drawio_to_html(xml_content, filename)` to save the XML into a viewable HTML file for the user.
 
-**Example Usage (Python):**
+**Example Usage (Conceptual):**
+- **Agent Action**: "I will now generate a Draw.io XML for the transmission chain..."
+- **Tool Call**: `visualizer.render_drawio_to_html(xml_content="<mxGraphModel>...", filename="chain_visual.html")`
 
-```python
-from scripts.visualizer import AlphaEarVisualizer
-
-viz = AlphaEarVisualizer()
-# This method would wraps the logic to produce XML
-xml_output = viz.generate_logic_diagram(
-    nodes=["Event A", "Impact B", "Stock C"],
-    edges=[("Event A", "Impact B"), ("Impact B", "Stock C")]
-)
-print(xml_output)
-```
 
 ## Dependencies
 
