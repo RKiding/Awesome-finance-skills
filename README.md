@@ -3,6 +3,8 @@
 > **Transform your AI agent into a Wall Street analyst in seconds.**
 >
 > A plug-and-play skill collection that empowers LLMs with **real-time news**, **stock data**, **sentiment analysis**, **logic visualization**, and **market prediction** capabilities.
+>
+> 🚀 **New:** DeepEar Live Demo (Free Lite Version) is now online: [https://deepear.vercel.app/](https://deepear.vercel.app/)
 
 [English](#english) | [中文](#中文)
 
@@ -75,12 +77,14 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 
 For a **complete autonomous financial analysis framework**, check out:
 
-**[AlphaEar →](https://github.com/RKiding/AlphaEar)**
+**[DeepEar →](https://github.com/RKiding/AlphaEar)**
 
 ---
 
 <a name="中文"></a>
 ## 🇨🇳 中文
+
+> 🚀 **全新:** DeepEar 在线演示 (免费Lite版) 现已上线: [https://deepear.vercel.app/](https://deepear.vercel.app/)
 
 ### ✨ 核心亮点
 
@@ -145,4 +149,4 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 
 如需**完整的自动化金融分析框架**，请关注：
 
-**[AlphaEar →](https://github.com/RKiding/AlphaEar)**
+**[DeepEar →](https://github.com/RKiding/AlphaEar)**
