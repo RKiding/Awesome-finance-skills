@@ -22,8 +22,20 @@
 
 ### 🚀 Quick Start
 
+#### Option 1: One-Step Install (Recommended)
+You can now install individual skills directly using `npx skills`:
+
 ```bash
-# Clone to your agent's skill directory
+# Install a specific skill (e.g., alphaear-news)
+npx skills add RKiding/Awesome-finance-skills@alphaear-news
+
+# Or search for other skills
+npx skills find "get the finance news (alphaear-news)"
+```
+
+#### Option 2: Manual Installation
+```bash
+# Clone the repository
 git clone https://github.com/RKiding/Awesome-finance-skills.git
 
 # Copy skills to your agent (example for OpenCode)
@@ -95,8 +107,20 @@ For a **complete autonomous financial analysis framework**, check out:
 
 ### 🚀 快速开始
 
+#### 方式一：一键安装（推荐）
+现在你可以使用 `npx skills` 直接安装单个技能：
+
 ```bash
-# 克隆到你的 Agent 技能目录
+# 安装指定技能（如：alphaear-news）
+npx skills add RKiding/Awesome-finance-skills@alphaear-news
+
+# 或者搜索更多金融技能
+npx skills find "get the finance news (alphaear-news)"
+```
+
+#### 方式二：手动安装
+```bash
+# 克隆仓库
 git clone https://github.com/RKiding/Awesome-finance-skills.git
 
 # 复制技能到你的 Agent（以 OpenCode 为例）
