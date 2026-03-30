@@ -64,6 +64,12 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | **alphaear-reporter** | Professional report generation | Plan → Write → Edit → Chart |
 | **alphaear-search** | Web search & local RAG | Jina / DDG / Baidu |
 
+### 🌐 Community Skills
+
+| Skill | Description | Key Feature |
+|:------|:------------|:------------|
+| **[SoulPass](https://github.com/soulpassai/soulpass-skill)** | Hardware-secured Solana wallet, trading terminal, and agent identity layer | Jupiter DEX swaps, meme coin trading, DeFi yield, trading bots, encrypted agent-to-agent messaging, service discovery. Keys in Apple Secure Enclave. |
+
 ---
 
 ### 🔧 Integration Guide
@@ -147,6 +153,12 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | **alphaear-logic-visualizer** | 传导链路图生成 | 输出 Draw.io XML |
 | **alphaear-reporter** | 专业研报生成 | 规划 → 撰写 → 编辑 → 图表 |
 | **alphaear-search** | 全网搜索与本地 RAG | 支持 Jina / DDG / 百度 |
+
+### 🌐 社区技能
+
+| 技能 | 功能描述 | 核心特性 |
+|:-----|:---------|:---------|
+| **[SoulPass](https://github.com/soulpassai/soulpass-skill)** | 硬件安全的 Solana 钱包、交易终端和 Agent 身份层 | Jupiter DEX 交易、Meme 币交易、DeFi 收益、交易机器人、加密 Agent 间消息传递、服务发现。密钥存储于 Apple Secure Enclave。 |
 
 ---
 
