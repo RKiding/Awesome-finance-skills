@@ -39,6 +39,7 @@ npx skills find "alphaear"
 git clone https://github.com/RKiding/Awesome-finance-skills.git
 
 # Copy skills to your agent (example for OpenCode)
+- [skill-taxonomy](https://github.com/SeeleAI/skill-taxonomy) - Structured taxonomy for AI agent skills: discovery, classification and routing across multi-agent workflows.
 cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 ```
 
