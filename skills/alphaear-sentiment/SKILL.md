@@ -48,6 +48,34 @@ Use this prompt to analyze financial texts if the local tool is insufficient or 
 #### Helper Methods
 - `update_single_news_sentiment(id, score, reason)`: Use this to save your manual analysis to the database.
 
+### 3. Symbol / Crypto Pair Sentiment Aggregation
+
+Use `get_symbol_sentiment(symbol, days, limit)` to aggregate DB news sentiment for a specific ticker or crypto trading pair.
+
+**Supported crypto pairs (with alias expansion):**
+- `TRYUSDT` — Turkish Lira / Tether (searches "TRYUSDT", "TRY/USDT", "TRY-USDT", etc.)
+- `TRYUSDC` — Turkish Lira / USD Coin (searches "TRYUSDC", "TRY/USDC", "TRY-USDC", etc.)
+- Any other symbol is searched literally.
+
+**Returns:**
+```json
+{
+  "symbol": "TRYUSDT",
+  "count": 5,
+  "scored_count": 3,
+  "avg_score": -0.42,
+  "label": "negative",
+  "label_distribution": {"positive": 0, "negative": 3, "neutral": 0},
+  "items": [...]
+}
+```
+
+**Score Range**: -1.0 (Negative) to 1.0 (Positive).
+
+> **Note**: This method reads from the local DB. Run `batch_update_news_sentiment()` first to ensure news items have scores, or use the LLM prompt to manually score items via `update_single_news_sentiment()`.
+
+To add more crypto pairs, extend `CRYPTO_SYMBOL_ALIASES` in `scripts/sentiment_tools.py`.
+
 ## Dependencies
 
 -   `torch` (for FinBERT)

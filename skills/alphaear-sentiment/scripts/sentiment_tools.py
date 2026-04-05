@@ -9,6 +9,12 @@ from .database_manager import DatabaseManager
 # 从环境变量读取默认情绪分析模式
 DEFAULT_SENTIMENT_MODE = os.getenv("SENTIMENT_MODE", "auto")  # auto, bert, llm
 
+# Crypto pair aliases: maps canonical symbol to a list of search keywords
+CRYPTO_SYMBOL_ALIASES: Dict[str, List[str]] = {
+    "TRYUSDT": ["TRYUSDT", "TRY/USDT", "TRY-USDT", "Turkish Lira USDT", "土耳其里拉 USDT"],
+    "TRYUSDC": ["TRYUSDC", "TRY/USDC", "TRY-USDC", "Turkish Lira USDC", "土耳其里拉 USDC"],
+}
+
 class SentimentTools:
     """
     情绪分析工具 - 支持 LLM 和 BERT 两种模式
@@ -162,6 +168,73 @@ class SentimentTools:
         except Exception as e:
             logger.error(f"BERT analysis failed: {e}")
             return [{"score": 0.0, "label": "error", "reason": str(e)}] * len(texts)
+
+    def get_symbol_sentiment(self, symbol: str, days: int = 7, limit: int = 50) -> Dict:
+        """
+        Aggregate sentiment from DB news related to a specific symbol or crypto pair.
+
+        Supports canonical crypto symbols (e.g. "TRYUSDT", "TRYUSDC") using
+        CRYPTO_SYMBOL_ALIASES for broader keyword matching.
+
+        Args:
+            symbol: Ticker or crypto pair (e.g. "TRYUSDT", "TRYUSDC", "BTC").
+            days:   How many days back to search (passed through to news query).
+            limit:  Max news items to consider.
+
+        Returns:
+            Dict with keys:
+              - symbol (str)
+              - count (int): total matched news items
+              - scored_count (int): items that have a sentiment_score
+              - avg_score (float | None): average sentiment score
+              - label (str): "positive" | "negative" | "neutral" | "unknown"
+              - label_distribution (dict): counts per label
+              - items (list): raw matched news dicts
+        """
+        keywords = CRYPTO_SYMBOL_ALIASES.get(symbol.upper(), [symbol])
+
+        matched: List[Dict] = []
+        seen_ids = set()
+        for kw in keywords:
+            results = self.db.search_local_news(kw, limit=limit)
+            for item in results:
+                item_id = item.get("id")
+                if item_id not in seen_ids:
+                    seen_ids.add(item_id)
+                    matched.append(item)
+
+        scored = [m for m in matched if m.get("sentiment_score") is not None]
+        scores = [m["sentiment_score"] for m in scored]
+
+        avg_score: Optional[float] = round(sum(scores) / len(scores), 4) if scores else None
+
+        dist: Dict[str, int] = {"positive": 0, "negative": 0, "neutral": 0}
+        for s in scores:
+            if s > 0.1:
+                dist["positive"] += 1
+            elif s < -0.1:
+                dist["negative"] += 1
+            else:
+                dist["neutral"] += 1
+
+        if avg_score is None:
+            label = "unknown"
+        elif avg_score > 0.1:
+            label = "positive"
+        elif avg_score < -0.1:
+            label = "negative"
+        else:
+            label = "neutral"
+
+        return {
+            "symbol": symbol.upper(),
+            "count": len(matched),
+            "scored_count": len(scored),
+            "avg_score": avg_score,
+            "label": label,
+            "label_distribution": dist,
+            "items": matched,
+        }
 
     def batch_update_news_sentiment(self, source: Optional[str] = None, limit: int = 50, use_bert: Optional[bool] = None):
         """
