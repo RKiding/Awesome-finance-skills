@@ -91,6 +91,10 @@ For a **complete autonomous financial analysis framework**, check out:
 
 **[DeepEar →](https://github.com/RKiding/AlphaEar)**
 
+For a terminal-first **multi-agent equity research desk** with theme screening, watchlists, one-DOCX memo delivery, and a Codex skill mode, see:
+
+**[Stock Research Desk →](https://github.com/wd041216-bit/stock-research-desk)**
+
 ---
 
 <a name="中文"></a>
@@ -174,6 +178,10 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 如需**完整的自动化金融分析框架**，请关注：
 
 **[DeepEar →](https://github.com/RKiding/AlphaEar)**
+
+如需一个终端优先的**多 Agent 股票研究工作台**，支持主题筛选、watchlist、单 DOCX 研报交付和 Codex Skill 模式，也可以参考：
+
+**[Stock Research Desk →](https://github.com/wd041216-bit/stock-research-desk)**
 
 ---
 
