@@ -91,6 +91,9 @@ For a **complete autonomous financial analysis framework**, check out:
 
 **[DeepEar →](https://github.com/RKiding/AlphaEar)**
 
+**[Adanos Market Sentiment API →](https://api.adanos.org/docs/)**
+Cross-source stock sentiment API for finance agents and custom skills, covering Reddit, X, News, and Polymarket with trending and compare endpoints.
+
 ---
 
 <a name="中文"></a>
@@ -174,6 +177,9 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 如需**完整的自动化金融分析框架**，请关注：
 
 **[DeepEar →](https://github.com/RKiding/AlphaEar)**
+
+**[Adanos Market Sentiment API →](https://api.adanos.org/docs/)**
+适用于金融 Agent 与自定义技能的跨信源美股情绪 API，覆盖 Reddit、X、News 与 Polymarket，并提供 trending 与 compare 接口。
 
 ---
 
