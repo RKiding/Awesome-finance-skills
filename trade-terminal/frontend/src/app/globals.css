@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #484f58; }
+
+.positive { color: #3fb950; }
+.negative { color: #f85149; }
+.neutral  { color: #8b949e; }
+
+.panel {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+}
+
+.btn {
+  @apply px-3 py-1.5 rounded text-xs font-medium transition-colors cursor-pointer border-0 outline-none;
+}
+.btn-green  { @apply bg-accent-green/20 text-accent-green hover:bg-accent-green/30; }
+.btn-red    { @apply bg-accent-red/20 text-accent-red hover:bg-accent-red/30; }
+.btn-blue   { @apply bg-accent-blue/20 text-accent-blue hover:bg-accent-blue/30; }
+.btn-ghost  { @apply bg-bg-tertiary text-text-secondary hover:bg-bg-border hover:text-text-primary; }
+
+.tag {
+  @apply inline-block px-2 py-0.5 rounded text-xs;
+}
+.tag-green  { @apply bg-accent-green/20 text-accent-green; }
+.tag-red    { @apply bg-accent-red/20 text-accent-red; }
+.tag-blue   { @apply bg-accent-blue/20 text-accent-blue; }
+.tag-yellow { @apply bg-accent-yellow/20 text-accent-yellow; }

@@ -1,0 +1,10 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+websockets>=12.0
+httpx>=0.27.0
+aiosqlite>=0.20.0
+python-dotenv>=1.0.0
+anthropic>=0.28.0
+pydantic>=2.7.0
+yfinance>=0.2.40
+aiofiles>=23.2.1
