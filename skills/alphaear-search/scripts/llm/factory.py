@@ -109,6 +109,34 @@ def get_model(model_provider: str, model_id: str, **kwargs):
             **kwargs
         )
     
+    elif model_provider == 'atlas':
+        # Atlas Cloud is OpenAI compatible (single endpoint for 59+ LLMs).
+        api_key = os.getenv("ATLASCLOUD_API_KEY")
+        if not api_key:
+            print('Warning: ATLASCLOUD_API_KEY not set.')
+
+        # Some OpenAI-compatible endpoints expect the standard OpenAI role
+        # names rather than Agno's default mapping (which maps "system" ->
+        # "developer"). Provide an explicit role_map to ensure compatibility.
+        default_role_map = {
+            "system": "system",
+            "user": "user",
+            "assistant": "assistant",
+            "tool": "tool",
+            "model": "assistant",
+        }
+
+        # Allow callers to override role_map via kwargs, otherwise use default
+        role_map = kwargs.pop("role_map", default_role_map)
+
+        return OpenAIChat(
+            id=model_id,
+            base_url="https://api.atlascloud.ai/v1",
+            api_key=api_key,
+            role_map=role_map,
+            **kwargs
+        )
+
     else:
         raise ValueError(f"Unknown model provider: {model_provider}")
 
