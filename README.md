@@ -180,3 +180,7 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 ## 🌟 Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=RKiding/Awesome-finance-skills&type=Date)](https://star-history.com/#RKiding/Awesome-finance-skills&Date)
+
+
+## Related Resources
+- [Skill Hub](https://skill.442595.xyz/) — 5800+ curated AI Agent Skills for Claude Code, Codex, Cursor, Hermes & more across 22 categories.
