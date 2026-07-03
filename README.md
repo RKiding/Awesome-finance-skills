@@ -40,6 +40,14 @@ git clone https://github.com/RKiding/Awesome-finance-skills.git
 
 # Copy skills to your agent (example for OpenCode)
 cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
+
+# Or copy skills to Autohand Code globally
+mkdir -p ~/.autohand/skills
+cp -r Awesome-finance-skills/skills/* ~/.autohand/skills/
+
+# Or copy skills to the current Autohand Code project
+mkdir -p .autohand/skills
+cp -r Awesome-finance-skills/skills/* .autohand/skills/
 ```
 
 **That's it!** Your agent now understands finance. Try asking:
@@ -78,10 +86,14 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | | Global | `~/.config/opencode/skills/<skill>/` |
 | **OpenClaw** | Workspace | `<workspace>/skills` (highest priority) |
 | | Managed | `~/.openclaw/skills` |
+| **Autohand Code** | Personal | `~/.autohand/skills/<skill>/` |
+| | Project | `<project>/.autohand/skills/<skill>/` |
 | **Claude Code / Codex** | Personal | `~/.claude/skills/` or `~/.codex/skills/` |
 | | Project | `.claude/skills/` |
 
 > 💡 Each skill folder must contain a `SKILL.md` file.
+
+If a skill is later published to an Autohand Skills index, install it with `autohand --skill-install <skill-name>`, or add `--project` to install it into the current project.
 
 ---
 
@@ -125,6 +137,14 @@ git clone https://github.com/RKiding/Awesome-finance-skills.git
 
 # 复制技能到你的 Agent（以 OpenCode 为例）
 cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
+
+# 或者全局安装到 Autohand Code
+mkdir -p ~/.autohand/skills
+cp -r Awesome-finance-skills/skills/* ~/.autohand/skills/
+
+# 或者安装到当前 Autohand Code 项目
+mkdir -p .autohand/skills
+cp -r Awesome-finance-skills/skills/* .autohand/skills/
 ```
 
 **搞定！** 你的 Agent 现在已经拥有金融分析能力。试试问它：
@@ -162,10 +182,14 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | | 全局 | `~/.config/opencode/skills/<skill>/` |
 | **OpenClaw** | 工作区 | `<workspace>/skills`（优先级最高） |
 | | 托管 | `~/.openclaw/skills` |
+| **Autohand Code** | 个人 | `~/.autohand/skills/<skill>/` |
+| | 项目 | `<project>/.autohand/skills/<skill>/` |
 | **Claude Code / Codex** | 个人 | `~/.claude/skills/` 或 `~/.codex/skills/` |
 | | 项目 | `.claude/skills/` |
 
 > 💡 每个技能文件夹需包含 `SKILL.md` 文件。
+
+如果某个 skill 后续发布到 Autohand Skills 索引，也可以用 `autohand --skill-install <skill-name>` 安装到用户级目录，或加 `--project` 安装到当前项目。
 
 ---
 
