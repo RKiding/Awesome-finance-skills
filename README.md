@@ -63,6 +63,7 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | **alphaear-logic-visualizer** | Transmission chain diagrams | Draw.io XML output |
 | **alphaear-reporter** | Professional report generation | Plan → Write → Edit → Chart |
 | **alphaear-search** | Web search & local RAG | Jina / DDG / Baidu |
+| **bde-score** | Multi-factor stock scoring (US/HK/A-share) via MCP | EU AI Act compliant, $0.01/query |
 
 ---
 
