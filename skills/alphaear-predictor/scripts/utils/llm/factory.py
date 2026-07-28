@@ -53,6 +53,28 @@ def get_model(model_provider: str, model_id: str, **kwargs):
             **kwargs
         )
 
+    elif model_provider in {'atlas', 'atlascloud'}:
+        api_key = os.getenv("ATLASCLOUD_API_KEY")
+        if not api_key:
+            print('Warning: ATLASCLOUD_API_KEY not set.')
+
+        default_role_map = {
+            "system": "system",
+            "user": "user",
+            "assistant": "assistant",
+            "tool": "tool",
+            "model": "assistant",
+        }
+        role_map = kwargs.pop("role_map", default_role_map)
+
+        return OpenAIChat(
+            id=model_id,
+            base_url="https://api.atlascloud.ai/v1",
+            api_key=api_key,
+            role_map=role_map,
+            **kwargs
+        )
+
     elif model_provider == 'zai':
         api_key = os.getenv("ZAI_KEY_API")
         if not api_key:
@@ -111,4 +133,3 @@ def get_model(model_provider: str, model_id: str, **kwargs):
     
     else:
         raise ValueError(f"Unknown model provider: {model_provider}")
-
