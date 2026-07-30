@@ -63,6 +63,7 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | **alphaear-logic-visualizer** | Transmission chain diagrams | Draw.io XML output |
 | **alphaear-reporter** | Professional report generation | Plan → Write → Edit → Chart |
 | **alphaear-search** | Web search & local RAG | Jina / DDG / Baidu |
+| **xquik-market-signals** | Public X evidence for finance research | Search, trends & source provenance |
 
 ---
 
@@ -147,6 +148,7 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | **alphaear-logic-visualizer** | 传导链路图生成 | 输出 Draw.io XML |
 | **alphaear-reporter** | 专业研报生成 | 规划 → 撰写 → 编辑 → 图表 |
 | **alphaear-search** | 全网搜索与本地 RAG | 支持 Jina / DDG / 百度 |
+| **xquik-market-signals** | 金融研究中的公开 X 证据 | 搜索、趋势与来源追踪 |
 
 ---
 
