@@ -65,6 +65,8 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 | **alphaear-search** | Web search & local RAG | Jina / DDG / Baidu |
 
 ---
+- **[Level Open Finance Skills](https://github.com/levelcfo/open-finance-skills)** - 20 open-source accounting, month-end close, ASC 606/330, WIP schedule, and treasury verification skills with MCP server and interactive documentation at [levelcfo.com/finance-systems](https://levelcfo.com/finance-systems/).
+- **[Modern CFO Cost Segregation & Bonus Depreciation Benchmarks](https://github.com/OverlineIQ/cost-segregation-benchmarks)** - 45 property-type MACRS 5-year, 15-year, and 27.5/39-year cost segregation depreciation allocation bands and Streamable HTTP MCP server (`https://mcp.freecostseg.com/mcp`) from [Modern CFO](https://freecostseg.com/resources/cost-segregation-benchmarks/) and [Overline IQ](https://overlineiq.com/cost-segregation-tax-savings) (Zenodo DOI `10.5281/zenodo.23839364`).
 
 ### 🔧 Integration Guide
 
