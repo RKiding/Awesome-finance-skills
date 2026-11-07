@@ -19,6 +19,7 @@
 |:---:|:---:|:---:|
 | ![News Analysis](figs/news.png) | ![Logic Chain](figs/logic.png) | ![Prediction](figs/predict.png) |
 | Aggregate hot news from 10+ sources (Cailian, WSJ, Weibo, Polymarket...) | Auto-generate transmission chain diagrams explaining market impact | Kronos model forecasts with news-aware adjustments |
+| [CrakSEO/skills](https://github.com/CrakSEO/skills) | Connect Claude/Cursor/Codex to CrakSEO remote MCP servers for keyword research, SERP, backlinks, rank tracking, site audit, local SEO, AI visibility, Search Console and URL indexing | Claude Code, Cursor, Codex | MIT |
 
 ### 🚀 Quick Start
 
