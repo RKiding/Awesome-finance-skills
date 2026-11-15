@@ -91,6 +91,8 @@ For a **complete autonomous financial analysis framework**, check out:
 
 **[DeepEar →](https://github.com/RKiding/AlphaEar)**
 
+- [No Stairs Please](https://nostairsplease.com/) — Live-music venue directory & hosted MCP server (`https://nostairsplease.com/mcp`).
+
 ---
 
 <a name="中文"></a>
@@ -174,6 +176,8 @@ cp -r Awesome-finance-skills/skills/* ~/.config/opencode/skills/
 如需**完整的自动化金融分析框架**，请关注：
 
 **[DeepEar →](https://github.com/RKiding/AlphaEar)**
+
+- [No Stairs Please](https://nostairsplease.com/) — Live-music venue directory & hosted MCP server (`https://nostairsplease.com/mcp`).
 
 ---
 
